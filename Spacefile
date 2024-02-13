@@ -1,0 +1,30 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+icon: ./dlsite_recommendation_llm/static_files/favicon.png
+micros:
+  - name: fastapi
+    src: .
+    engine: python3.9
+    primary: true
+    public_routes:
+      - "/*"
+    run: "drl"
+    dev: "poetry run task dev"
+    presets:
+      env:
+        - name: PINECONE_API_KEY
+          description: "Pinecone API key: https://pinecone.io"
+        - name: PINECONE_INDEX
+          description: "Pinecone index name: https://pinecone.io"
+          default: "dlsite-recommendation-llm"
+        - name: PINECONE_ENV
+          description: "Pinecone running environment: https://pinecone.io"
+          default: "gcp-starter"
+        - name: OPENAI_API_KEY
+          description: "OpenAI API key: https://platform.openai.com/docs/overview"
+        - name: OPENAI_API_Model
+          description: "OpenAI API using model: https://platform.openai.com/docs/overview"
+          default: "gpt-3.5-turbo"
+        - name: OPENAI_API_TEMPERATURE
+          description: "OpenAI API randomness: https://platform.openai.com/docs/overview"
+          default: "0.5"

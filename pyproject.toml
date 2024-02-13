@@ -1,0 +1,94 @@
+# poetry self add poetry-bumpversion
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = [
+  "poetry-core",
+]
+
+[tool]
+[tool.poetry]
+authors = ["eggplants <w10776e8w@yahoo.co.jp>"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only"
+]
+description = "Recommend DLSite voice works with LLM"
+keywords = ["llm", "dlsite"]
+name = "dlsite_recommendation_llm"
+packages = [{include = "dlsite_recommendation_llm"}]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/eggplants/dlsite-recommendation-llm"
+version = "0.0.0"
+
+[tool.poetry.dependencies]
+python = ">3.9.7,<3.13"
+streamlit = "^1.31.1"
+langchain = "^0.1.6"
+langchain-community = "^0.0.19"
+langchain-openai = "^0.0.5"
+python-dotenv = "^1.0.1"
+pinecone-client = "^3.0.2"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.1.1"
+pre-commit = ">=2.20,<4.0"
+taskipy = "^1.10.3"
+pytest = "^8.0.0"
+pytest-cov = "^4.1.0"
+
+[tool.poetry.scripts]
+drl = "dlsite_recommendation_llm.cli:main"
+
+[tool.black]
+line-length = 120
+target-version = ['py39']
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+  "D",
+  "D203",
+  "D213",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/test_*.py" = [
+  "INP001", #  Add an `__init__.py`.
+  "S101", #    Use of assert detected
+]
+"scripts/*.py" = [
+  "D",
+  "INP001", #  Add an `__init__.py`.
+]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 18
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+pretty = true
+python_version = "3.9"
+show_error_codes = true
+strict = true
+
+[tool.poetry_bumpversion.file."dlsite_recommendation_llm/__init__.py"]
+
+[tool.taskipy.tasks]
+dev = "streamlit run dlsite_recommendation_llm/main.py"
+start = "task test --global.developmentMode=false"
+test = "pytest --cov=dlsite_recommendation_llm --cov-report=term"
+"test:ci" = "task test --cov-report=xml:cov.xml"
+lint = "pre-commit run -a"
+profile = "python -m cProfile"
