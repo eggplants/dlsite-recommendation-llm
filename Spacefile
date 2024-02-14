@@ -8,7 +8,7 @@ micros:
     primary: true
     public_routes:
       - "/*"
-    run: "drl"
+    run: "streamlit run dlsite_recommendation_llm/main.py"
     dev: "poetry run task dev"
     presets:
       env:
