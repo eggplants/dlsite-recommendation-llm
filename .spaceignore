@@ -1,0 +1,10 @@
+.env
+README.md
+*.pyc
+.gitignore
+
+.git/
+.space/
+__pycache__/
+.mypy_cache/
+.ruff_cache/
