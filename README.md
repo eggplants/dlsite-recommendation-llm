@@ -18,7 +18,7 @@
   <https://results.pre-commit.ci/latest/github/eggplants/dlsite-recommendation-llm/master>
 )
 
-<https://zenn.dev/cloud_ace/articles/19bd3554ac8432> but with [DLSite](https://www.dlsite.com/) [voice works data](https://github.com/eggplants/dojinvoice_db)
+Reimplementation of <https://zenn.dev/cloud_ace/articles/19bd3554ac8432>, but for [DLSite](https://www.dlsite.com/) voice works!
 
 ## Deployment
 
@@ -31,7 +31,20 @@
 [Deploy to Render]: <https://render.com/images/deploy-to-render-button.svg>
 [Website]: <https://img.shields.io/website?label=dlsite-recommendation-llm.onrender.com&url=https%3A%2F%2Fdlsite-recommendation-llm.onrender.com>
 
+## Configuration
+
+You have to copy existing `.env.example` file to `.env` file and fill in to run in local.
+
+- `PINECONE_API_KEY`: Pinecone [API key](https://docs.pinecone.io/docs/projects#api-keys)
+- `PINECONE_INDEX`: Pinecone [index](https://docs.pinecone.io/docs/indexes) name
+- `PINECONE_ENV`: [Pod environment](https://docs.pinecone.io/docs/indexes#pod-environments) to host index DB
+- `OPENAI_API_KEY`: OpenAI [API key](https://platform.openai.com/docs/quickstart/account-setup)
+- `OPENAI_API_MODEL`: OpenAI [model](https://platform.openai.com/docs/models/models)
+- `OPENAI_API_TEMPERATURE`: OpenAI API [sampling temperature](https://platform.openai.com/docs/api-reference/audio/createTranscription#audio-createtranscription-temperature) (to put it simply, it is randomness)
+
 ## How to run
+
+You can fetch data from DLSite with [eggplants/dojinvoice_db](https://github.com/eggplants/dojinvoice_db).
 
 ```bash
 # Setup deps
