@@ -22,10 +22,13 @@
 
 ## Deployment
 
+[![Deploy to Render]](https://render.com/deploy?repo=https://github.com/eggplants/dlsite-recommendation-llm)
+
 [![Website]](https://dlsite-recommendation-llm.onrender.com)
 
 ![screenshot](https://github.com/eggplants/dlsite-recommendation-llm/assets/42153744/97de9a5d-93a5-4283-be5c-5f248d4620c0)
 
+[Deploy to Render]: <https://render.com/images/deploy-to-render-button.svg>
 [Website]: <https://img.shields.io/website?label=dlsite-recommendation-llm.onrender.com&url=https%3A%2F%2Fdlsite-recommendation-llm.onrender.com>
 
 ## How to run

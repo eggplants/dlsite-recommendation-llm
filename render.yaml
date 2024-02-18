@@ -1,0 +1,30 @@
+services:
+- type: web
+  name: streamlit
+  runtime: python
+  repo: https://github.com/eggplants/dlsite-recommendation-llm.git
+  region: singapore
+  plan: free
+  numInstances: 1
+  healthCheckPath: /
+  buildCommand: poetry install --no-dev
+  startCommand: drl
+  autoDeploy: true
+  envVars:
+  - fromGroup: drl-config
+
+envVarGroups:
+- name: drl-config
+  envVars:
+  - key: PINECONE_API_KEY
+    sync: false
+  - key: PINECONE_INDEX
+    value: dlsite-recommendation-llm
+  - key: PINECONE_ENV
+    value: gcp-starter
+  - key: OPENAI_API_KEY
+    sync: false
+  - key: OPENAI_API_MODEL
+    value: gpt-3.5-turbo
+  - key: OPENAI_API_TEMPERATURE
+    value: '0.5'
