@@ -1522,13 +1522,13 @@ xmp = ["defusedxml"]
 
 [[package]]
 name = "pinecone-client"
-version = "4.0.0"
+version = "4.1.0"
 description = "Pinecone client and SDK"
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "pinecone_client-4.0.0-py3-none-any.whl", hash = "sha256:606a6acb70e387ebcc2ae29b1848f197e58226d1d7267ea87a22cb561a36bdf1"},
-    {file = "pinecone_client-4.0.0.tar.gz", hash = "sha256:d44db212e64aa343d14efc9b08e9e45d98ba7b681f63298b87033542ea017f23"},
+    {file = "pinecone_client-4.1.0-py3-none-any.whl", hash = "sha256:9cb9a66cab86b29d526cc99fe6ab151f577967a447c81448057dcd8682646a55"},
+    {file = "pinecone_client-4.1.0.tar.gz", hash = "sha256:42062a628e7a941d0bc24bb8afb026f3ad4d264cf06d6a627a3de583214ae3de"},
 ]
 
 [package.dependencies]
@@ -2372,13 +2372,13 @@ sqlcipher = ["sqlcipher3_binary"]
 
 [[package]]
 name = "streamlit"
-version = "1.33.0"
+version = "1.35.0"
 description = "A faster way to build and share data apps"
 optional = false
 python-versions = "!=3.9.7,>=3.8"
 files = [
-    {file = "streamlit-1.33.0-py2.py3-none-any.whl", hash = "sha256:bfacb5d1edefcf803c2040b051a21b4c81317a9865448e6767d0a0c6aae7edae"},
-    {file = "streamlit-1.33.0.tar.gz", hash = "sha256:a8da8ff46f5b948c56d2dc7aca7a61cf8d995f4f21744cf82258ae75e63004ba"},
+    {file = "streamlit-1.35.0-py2.py3-none-any.whl", hash = "sha256:e17d1d86830a0d7687c37faf2fe47bffa752d0c95a306e96d7749bd3faa72a5b"},
+    {file = "streamlit-1.35.0.tar.gz", hash = "sha256:679d55bb6189743f606abf0696623df0bfd223a6d0c8d96b8d60678d4891d2d6"},
 ]
 
 [package.dependencies]
