@@ -37,7 +37,7 @@ langchain = "^0.1.6"
 langchain-community = ">=0.0.19,<0.0.21"
 langchain-openai = ">=0.0.5,<0.0.7"
 python-dotenv = "^1.0.1"
-pinecone-client = ">=3.0.2,<5.0.0"
+pinecone-client = ">=3.0.2,<6.0.0"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^1.1.1"
