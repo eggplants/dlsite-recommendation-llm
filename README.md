@@ -5,7 +5,7 @@
   )](
   <https://pypi.org/project/dlsite-recommendation-llm/>
 ) [![ghcr](
-  <https://ghcr-badge.deta.dev/eggplants/dlsite-recommendation-llm/size>
+  <https://ghcr-badge.egpl.dev/eggplants/dlsite-recommendation-llm/size>
   )](
   <https://github.com/eggplants/dlsite-recommendation-llm/pkgs/container/dlsite-recommendation-llm>
 ) [![Maintainability](
