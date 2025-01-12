@@ -1,22 +1,18 @@
+version: 1
 services:
 - type: web
-  name: streamlit
-  runtime: python
-  repo: https://github.com/eggplants/dlsite-recommendation-llm.git
+  name: drl
+  runtime: docker
+  repo: https://github.com/eggplants/dlsite-recommendation-llm
   region: singapore
   plan: free
+  branch: master
+  dockerfilePath: ./Dockerfile
+  dockerContext: .
   numInstances: 1
   healthCheckPath: /
-  buildCommand: poetry install
-  startCommand: drl
-  autoDeploy: true
-  envVars:
-  - fromGroup: drl-config
-  - key: POETRY_VERSION
-    value: 2.0.1
-
-envVarGroups:
-- name: drl-config
+  domains:
+  - drl.egpl.dev
   envVars:
   - key: PINECONE_API_KEY
     sync: false
