@@ -1,43 +1,48 @@
-# poetry self add poetry-bumpversion
-
 [build-system]
 build-backend = "poetry.core.masonry.api"
 requires = [
-  "poetry-core",
+  "poetry-core>=2",
 ]
 
-[tool.poetry]
-authors = [
-  "eggplants <w10776e8w@yahoo.co.jp>",
+[project]
+name = "dlsite-recommendation-llm"
+version = "0.0.0"
+description = "Recommend DLSite voice works with LLM"
+readme = "README.md"
+keywords = [
+  "dlsite",
+  "llm",
 ]
+license = { text = "MIT" }
+authors = [
+  { name = "eggplants", email = "w10776e8w@yahoo.co.jp" },
+]
+requires-python = ">=3.10,<4"
 classifiers = [
   "Development Status :: 3 - Alpha",
   "License :: OSI Approved :: MIT License",
-  "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
 ]
-description = "Recommend DLSite voice works with LLM"
-keywords = [
-  "llm",
-  "dlsite",
+dependencies = [
+  "langchain>=0.3.14,<0.4",
+  "langchain-community>=0.3.14,<0.4",
+  "langchain-openai>=0.3,<0.4",
+  "pinecone-client>=5.0.1,<6",
+  "python-dotenv>=1.0.1,<2",
+  "streamlit>=1.41.1,<2",
 ]
-name = "dlsite_recommendation_llm"
+urls.Repository = "https://github.com/eggplants/dlsite-recommendation-llm"
+scripts.drl = "dlsite_recommendation_llm.cli:main"
+
+[tool.poetry]
+requires-poetry = ">=2.0"
 packages = [
   { include = "dlsite_recommendation_llm" },
 ]
-license = "MIT"
-readme = "README.md"
-repository = "https://github.com/eggplants/dlsite-recommendation-llm"
-version = "0.0.0"
-
-[tool.poetry.dependencies]
-python = ">3.9.7,<3.13"
-streamlit = "^1.31.1"
-langchain = "^0.1.6"
-langchain-community = ">=0.0.19,<0.0.21"
-langchain-openai = ">=0.0.5,<0.0.7"
-python-dotenv = "^1.0.1"
-pinecone-client = ">=3.0.2,<6.0.0"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^1.1.1"
@@ -46,13 +51,13 @@ taskipy = "^1.10.3"
 pytest = "^8.0.0"
 pytest-cov = ">=4.1,<7.0"
 
-[tool.poetry.scripts]
-drl = "dlsite_recommendation_llm.cli:main"
+[tool.poetry.requires-plugins]
+poetry-plugin-shell = ">=1.0"
 
 [tool.black]
 line-length = 120
 target-version = [
-  'py39',
+  'py310',
 ]
 
 [tool.ruff]
@@ -77,18 +82,11 @@ lint.per-file-ignores."tests/test_*.py" = [
 lint.mccabe.max-complexity = 18
 lint.pydocstyle.convention = "numpy"
 
-[tool.isort]
-profile = "black"
-
 [tool.mypy]
 pretty = true
-python_version = "3.9"
+python_version = "3.10"
 show_error_codes = true
 strict = true
-
-[tool]
-
-[tool.poetry_bumpversion.file."dlsite_recommendation_llm/__init__.py"]
 
 [tool.taskipy.tasks]
 dev = "streamlit run dlsite_recommendation_llm/main.py"
