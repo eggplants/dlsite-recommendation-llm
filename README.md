@@ -18,7 +18,7 @@
   <https://results.pre-commit.ci/latest/github/eggplants/dlsite-recommendation-llm/master>
 )
 
-Reimplementation of <https://zenn.dev/cloud_ace/articles/19bd3554ac8432>, but for [DLSite](https://www.dlsite.com/) voice works!
+Reimplementation of <https://zenn.dev/cloud_ace/articles/19bd3554ac8432>, but for [DLsite](https://www.dlsite.com/) voice works!
 
 ## Deployment
 
@@ -44,7 +44,7 @@ You have to copy existing `.env.example` file to `.env` file and fill in to run 
 
 ## How to run
 
-You can fetch data from DLSite with [eggplants/dojinvoice_db](https://github.com/eggplants/dojinvoice_db).
+You can fetch data from DLsite with [eggplants/dojinvoice_db](https://github.com/eggplants/dojinvoice_db).
 
 ```bash
 # Setup deps
